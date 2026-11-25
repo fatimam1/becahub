@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lila-50: #f7f4ff;
+  --color-lila-100: #efe9ff;
+  --color-lila-200: #e0d4ff;
+  --color-lila-300: #c9b6fb;
+  --color-lila-400: #ab8ef5;
+  --color-lila-500: #8b66ea;
+  --color-lila-600: #7447d6;
+  --color-lila-700: #5f36b3;
+  --color-lila-800: #4c2d8f;
+  --color-lila-900: #3a2370;
+
+  --font-sans: "Poppins", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  @apply bg-lila-50 text-lila-900 antialiased;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+.animate-shake { animation: shake 0.45s ease-in-out; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.6s ease-out both; }
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.animate-pop { animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+@keyframes confetti {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.9; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+.animate-draw {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: draw 0.6s 0.3s ease-out forwards;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+.animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 30s linear infinite; }
